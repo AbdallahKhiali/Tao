@@ -1,97 +1,177 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Noto+Sans+JP:wght@100&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  overflow: hidden;
+  /* font-family: 'Noto Sans JP', sans-serif; */
+  font-family: 'Nanum Gothic Coding', monospace;
+  position: relative;
 }
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* display: block; */
+  height: 100vh;
+  width: 100%;
+}
+
+.menu_toggle {
+  position: fixed;
+  height: 48px;
+  width: 48px;
+  display: grid;
+  place-items: center;
+  z-index: 99999;
+  top: 50%;
+  right: 24px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.menu {
+  height: 100vh;
+  width: 360px;
+  position: fixed;
+  right: 0;
+  background-color: #fff;
+  padding: 24px;
+  list-style: none;
+}
+
+.menu_item {
+  background-color: #131313;
+  padding: 1rem;
+  margin: 24px;
+  font-size: 24px;
+  color: white;
+}
+
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 64px;
+  white-space: nowrap;
+  color: white;
+  font-weight: 100;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+p {
+  font-size: 24px;
+  color: white;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.hero_heading {
+  position: fixed;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  /* width: 600px; */
+  z-index: 9999;
+
 }
 
-.card {
-  padding: 2em;
+
+.hero_heading p {
+  width: 700px;
+  line-height: 48px;
+  margin: 16px 0;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.heading_details {
+  /* width: 700px; */
+  /* line-height: 48px; */
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: white;
+  position: relative;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.heading_details::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 36px;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+
+}
+
+
+
+#hero_button {
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 124px;
+  width: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: ease-out 0.1s;
+
+}
+
+h2 {
+  font-size: 32;
+  color: white;
+}
+
+#hero_header {
+  position: fixed;
+  left: 50%;
+  margin: 16px;
+  transform: translateX(-50%);
+}
+
+.inspiration {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+  color: white;
+}
+
+a {
+  color: inherit;
+}
+
+.links{
+  position: fixed;
+  top: 0px;
+  margin: 16px;
+
+  right: 0px;
+  color: white;
+  display: flex;
+}
+.links a{
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.web_dev{
+  position: fixed;
+  margin: 12px;
+  left: 0;
+  top: 0;
+  color: white;
 }
